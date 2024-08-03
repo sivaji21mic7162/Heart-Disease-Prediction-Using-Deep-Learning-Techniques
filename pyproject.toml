@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "repl-nix-heart-disease-prediction-using-deep-learning-techniques"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "repl_nix_heart_disease_prediction_using_deep_learning_techniques"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^3.0.3"
+joblib = "^1.4.2"
+numpy = "^2.0.1"
+pandas = "^2.2.2"
+scikit-learn = "^1.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
