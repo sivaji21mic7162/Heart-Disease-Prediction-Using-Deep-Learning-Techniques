@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Heart Disease Prediction</h1>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main>
+        <form id="prediction-form" method="post">
+            <div class="form-grid">
+                <div class="form-item">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-item">
+                    <label for="sex">Gender:</label>
+                    <select id="sex" name="sex" required>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="cp">Chest Pain Type (cp):</label>
+                    <input type="number" id="cp" name="cp" required>
+                </div>
+                <div class="form-item">
+                    <label for="trestbps">Resting Blood Pressure (trestbps):</label>
+                    <input type="number" id="trestbps" name="trestbps" required>
+                </div>
+                <div class="form-item">
+                    <label for="chol">Cholesterol Level (chol):</label>
+                    <input type="number" id="chol" name="chol" required>
+                </div>
+                <div class="form-item">
+                    <label for="fbs">Fasting Blood Sugar (fbs):</label>
+                    <input type="number" id="fbs" name="fbs" required>
+                </div>
+                <div class="form-item">
+                    <label for="restecg">Resting ECG Results (restecg):</label>
+                    <input type="number" id="restecg" name="restecg" required>
+                </div>
+                <div class="form-item">
+                    <label for="thalach">Max Heart Rate Achieved (thalach):</label>
+                    <input type="number" id="thalach" name="thalach" required>
+                </div>
+                <div class="form-item">
+                    <label for="exang">Exercise Induced Angina (exang):</label>
+                    <input type="number" id="exang" name="exang" required>
+                </div>
+                <div class="form-item">
+                    <label for="oldpeak">Oldpeak:</label>
+                    <input type="number" id="oldpeak" name="oldpeak" step="0.1" required>
+                </div>
+                <div class="form-item">
+                    <label for="slope">Slope of Peak Exercise ST Segment (slope):</label>
+                    <input type="number" id="slope" name="slope" required>
+                </div>
+                <div class="form-item">
+                    <label for="ca">Number of Major Vessels (ca):</label>
+                    <input type="number" id="ca" name="ca" required>
+                </div>
+                <div class="form-item">
+                    <label for="thal">Thalassemia (thal):</label>
+                    <input type="number" id="thal" name="thal" required>
+                </div>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result">
+            {% if result %}
+                <p>{{ result }}</p>
+            {% endif %}
+        </div>
+    </main>
+    <!-- <footer> -->
+        <!-- <p>&copy; 2024 Heart Disease Prediction System. All rights reserved.</p>
+    </footer> -->
+</body>
+</html>
